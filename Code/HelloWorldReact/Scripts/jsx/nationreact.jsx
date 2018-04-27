@@ -115,7 +115,7 @@ var App = React.createClass({
 
 
                      <div style={{'margin-bottom':'10px'}}>
-                         <div className="col-lg-12 col-sm-12" style={{'margin-bottom':'10px'}}>
+                         <div className="col-lg-12 col-md-12" style={{'margin-bottom':'10px'}}>
                                 <button className="btn btn-sm  btn-primary" id="btnAdd" onClick={() =>this.setEdit("Thông báo")}>
                                     Thêm mới
                                 </button>
@@ -124,20 +124,20 @@ var App = React.createClass({
                                        value="Tìm kiếm" onClick={this.eventClick} />
                          </div>
                      </div>
-                      <div className="col-lg-12 col-sm-12" id="div-search" style={{'margin-bottom':'10px', 'display':'none'}}>
-                            <div className="col-lg-3">
-                                <label className="col-sm-2 control-label">Mã</label>
-                                <div className="col-sm-10">
+                      <div className="col-lg-12 col-md-12" id="div-search" style={{'margin-bottom':'10px', 'display':'none'}}>
+                            <div className="col-lg-3 col-md-6">
+                                <label className="col-md-2 control-label">Mã</label>
+                                <div className="col-md-10">
                                     <input type="text" className="form-control" id="keysearch-CodeView" />
                                 </div>
                             </div>
-                            <div className="col-lg-4">
-                                <label className="col-sm-2 control-label">Tên</label>
-                                <div className="col-sm-10">
+                            <div className="col-lg-4 col-md-6">
+                                <label className="col-md-2 control-label">Tên</label>
+                                <div className="col-md-10">
                                     <input type="text" className="form-control" id="keysearch-Name" />
                                 </div>
                             </div>
-                            <div className="col-lg-3">
+                            <div className="col-lg-3 col-md-12">
                                 <button type="button" className="btn btn-info" onClick={this.loadSearch}>
                                          <span className="glyphicon glyphicon-search"></span> Lọc
                                 </button>
@@ -419,20 +419,20 @@ var NewRow = React.createClass({
                              <input type="text" className="form-control col-md-8 hidden" ref="CODE" id="CODE" />
             <form className="form-horizontal">
                                             <div className="box-body">
-                                                <div className="form-group">
+                                                <div className="form-group col-sm-12">
                                                     <label className="col-sm-4 control-label">Mã</label>
-                                                    <div className="col-sm-4">
+                                                    <div className="col-sm-4 col-md-4">
                                                         <input type="text" className="form-control" ref="CODEVIEW" id="CODEVIEW" />
                                                     </div>
                                                 </div>
-                                                 <div className="form-group">
+                                                 <div className="form-group col-sm-12">
                                                     <label className="col-sm-4 control-label">Tên</label>
                                                     <div className="col-sm-8">
                                                         <input type="text" className="form-control" ref="NAME" id="NAME" />
                                                     </div>
                                                  </div>
 
-                                                 <div className="form-group">
+                                                 <div className="form-group col-sm-12">
                                                     <label className="col-sm-4 control-label">Không sử dụng</label>
                                                     <div className="col-sm-8">
                                                         <input type="checkbox" ref="LOCK" id="LOCK" />
@@ -440,10 +440,10 @@ var NewRow = React.createClass({
                                                  </div>
 
 
-                                                  <div className="form-group">
+                                                  <div className="form-group col-sm-12">
                                                     <label className="col-sm-4 control-label">Note</label>
                                                     <div className="col-sm-8">
-                                                        <textarea ref="NOTE" id="NOTE" name="NOTE" rows="10" cols="65"></textarea>
+                                                        <textarea ref="NOTE" id="NOTE" name="NOTE" rows="10"  className="col-sm-12" ></textarea>
                                                     </div>
                                                   </div>
 

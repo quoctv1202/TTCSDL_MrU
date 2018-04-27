@@ -103,7 +103,7 @@ namespace IS.Sess
         /// <returns></returns>
         public int setKey(string key, object value)
         {
-            Context.Session[key] = value;
+            System.Web.HttpContext.Current.Session[key] = value;
             return 0;
         }
         /// <summary>
@@ -114,11 +114,11 @@ namespace IS.Sess
         /// <returns></returns>
         public object getKey(string key, object defaultValue)
         {
-            if (Context.Session[key] == null)
+            if (System.Web.HttpContext.Current.Session[key] == null)
             {
                 return defaultValue;
             }
-            return Context.Session[key];
+            return System.Web.HttpContext.Current.Session[key];
 
         }
 
@@ -126,7 +126,7 @@ namespace IS.Sess
         #region 4 login
         public int login(STAFF_INFO staff)
         {
-            Context.Session["STAFF_INFO"] = staff;
+            System.Web.HttpContext.Current.Session["STAFF_INFO"] = staff;
             //assign for later
             return 0;
         }
@@ -137,7 +137,7 @@ namespace IS.Sess
         /// <returns></returns>
         public int logout()
         {
-            Context.Session["STAFF_INFO"] = null;
+            System.Web.HttpContext.Current.Session["STAFF_INFO"] = null;
             return 0;
         }
         /// <summary>
@@ -146,11 +146,11 @@ namespace IS.Sess
         /// <returns>-1: not yet, 0 is logged</returns>
         public int isLogin()
         {
-            if (Context.Session["STAFF_INFO"] == null)
+            if (System.Web.HttpContext.Current.Session["STAFF_INFO"] == null)
             {
                 return -1;
             }
-            STAFF_INFO staff = (STAFF_INFO)Context.Session["STAFF_INFO"];
+            STAFF_INFO staff = (STAFF_INFO)System.Web.HttpContext.Current.Session["STAFF_INFO"];
             if (staff.CODE == "")
             {
                 return -1;
@@ -166,18 +166,18 @@ namespace IS.Sess
         {
             get
             {
-                if (Context.Session["STAFF_INFO"] == null)
+                if (System.Web.HttpContext.Current.Session["STAFF_INFO"] == null)
                     return "";
-                STAFF_INFO staff = (STAFF_INFO)Context.Session["STAFF_INFO"];
+                STAFF_INFO staff = (STAFF_INFO)System.Web.HttpContext.Current.Session["STAFF_INFO"];
                 return staff.CODEVIEW;
             }
             //set
             //{
-            //    if (Context.Session["STAFF_INFO"] != null)
+            //    if (System.Web.HttpContext.Current.Session["STAFF_INFO"] != null)
             //    {
-            //        STAFF_INFO staff = (STAFF_INFO)Context.Session["STAFF_INFO"];
+            //        STAFF_INFO staff = (STAFF_INFO)System.Web.HttpContext.Current.Session["STAFF_INFO"];
             //        staff.CODEVIEW=value;
-            //        Context.Session["STAFF_INFO"] = staff;
+            //        System.Web.HttpContext.Current.Session["STAFF_INFO"] = staff;
             //    }
             //}
         }
@@ -188,18 +188,18 @@ namespace IS.Sess
         {
             get
             {
-                if (Context.Session["STAFF_INFO"] == null)
+                if (System.Web.HttpContext.Current.Session["STAFF_INFO"] == null)
                     return "";
-                STAFF_INFO staff = (STAFF_INFO)Context.Session["STAFF_INFO"];
+                STAFF_INFO staff = (STAFF_INFO)System.Web.HttpContext.Current.Session["STAFF_INFO"];
                 return staff.NAME;
             }
             //set
             //{
-            //    if (Context.Session["STAFF_INFO"] != null)
+            //    if (System.Web.HttpContext.Current.Session["STAFF_INFO"] != null)
             //    {
-            //        STAFF_INFO staff = (STAFF_INFO)Context.Session["STAFF_INFO"];
+            //        STAFF_INFO staff = (STAFF_INFO)System.Web.HttpContext.Current.Session["STAFF_INFO"];
             //        staff.NAME = value;
-            //        Context.Session["STAFF_INFO"] = staff;
+            //        System.Web.HttpContext.Current.Session["STAFF_INFO"] = staff;
             //    }
             //}
         }
@@ -210,18 +210,18 @@ namespace IS.Sess
         {
             get
             {
-                if (Context.Session["STAFF_INFO"] == null)
+                if (System.Web.HttpContext.Current.Session["STAFF_INFO"] == null)
                     return "";
-                STAFF_INFO staff = (STAFF_INFO)Context.Session["STAFF_INFO"];
+                STAFF_INFO staff = (STAFF_INFO)System.Web.HttpContext.Current.Session["STAFF_INFO"];
                 return staff.IMG;
             }
             //set
             //{
-            //    if (Context.Session["STAFF_INFO"] != null)
+            //    if (System.Web.HttpContext.Current.Session["STAFF_INFO"] != null)
             //    {
-            //        STAFF_INFO staff = (STAFF_INFO)Context.Session["STAFF_INFO"];
+            //        STAFF_INFO staff = (STAFF_INFO)System.Web.HttpContext.Current.Session["STAFF_INFO"];
             //        staff.NAME = value;
-            //        Context.Session["STAFF_INFO"] = staff;
+            //        System.Web.HttpContext.Current.Session["STAFF_INFO"] = staff;
             //    }
             //}
         }
@@ -232,18 +232,18 @@ namespace IS.Sess
         {
             get
             {
-                if (Context.Session["STAFF_INFO"] == null)
+                if (System.Web.HttpContext.Current.Session["STAFF_INFO"] == null)
                     return "";
-                STAFF_INFO staff = (STAFF_INFO)Context.Session["STAFF_INFO"];
+                STAFF_INFO staff = (STAFF_INFO)System.Web.HttpContext.Current.Session["STAFF_INFO"];
                 return staff.CODE;
             }
             //set
             //{
-            //    if (Context.Session["STAFF_INFO"] != null)
+            //    if (System.Web.HttpContext.Current.Session["STAFF_INFO"] != null)
             //    {
-            //        STAFF_INFO staff = (STAFF_INFO)Context.Session["STAFF_INFO"];
+            //        STAFF_INFO staff = (STAFF_INFO)System.Web.HttpContext.Current.Session["STAFF_INFO"];
             //        staff.NAME = value;
-            //        Context.Session["STAFF_INFO"] = staff;
+            //        System.Web.HttpContext.Current.Session["STAFF_INFO"] = staff;
             //    }
             //}
         }
@@ -255,17 +255,17 @@ namespace IS.Sess
         {
             get
             {
-                if (Context.Session["STAFF_INFO"] == null)
+                if (System.Web.HttpContext.Current.Session["STAFF_INFO"] == null)
                     return null;
-                STAFF_INFO staff = (STAFF_INFO)Context.Session["STAFF_INFO"];
+                STAFF_INFO staff = (STAFF_INFO)System.Web.HttpContext.Current.Session["STAFF_INFO"];
                 return staff;
             }
             set
             {
-                if (Context.Session["STAFF_INFO"] != null)
+                if (System.Web.HttpContext.Current.Session["STAFF_INFO"] != null)
                 {
-                    STAFF_INFO staff = (STAFF_INFO)Context.Session["STAFF_INFO"];
-                    Context.Session["STAFF_INFO"] = value;
+                    STAFF_INFO staff = (STAFF_INFO)System.Web.HttpContext.Current.Session["STAFF_INFO"];
+                    System.Web.HttpContext.Current.Session["STAFF_INFO"] = value;
                 }
             }
         }
